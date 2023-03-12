@@ -1,0 +1,2 @@
+
+int evaluatePanic(float value);
