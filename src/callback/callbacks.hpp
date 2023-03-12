@@ -10,7 +10,7 @@ static float last_hum = 0.f;
 void panicCallback()
 {
 
-    int result = evaluatePanic(100);
+    int result = evaluatePanic(DhtService::getInstance().getTemperature());
     if (result == -1)
     {
         panicTask.setInterval(500);
