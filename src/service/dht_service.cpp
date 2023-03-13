@@ -3,58 +3,28 @@
 
 #define DHTPIN 3
 #define DHTTYPE DHT11
-
+ sensor_t sensor;
 DhtService::DhtService() : dht(DHTPIN, DHTTYPE)
 {
     dht.begin();
-    sensor_t sensor;
+    delay(2000);
+    
     dht.temperature().getSensor(&sensor);
-    delayMS = sensor.min_delay / 1000;
 
+    delayMS = sensor.min_delay / 1000;
+    sensor.min_delay=1000;
     dht.temperature().getSensor(&sensor);
-    Serial.println(F("------------------------------------"));
-    Serial.println(F("Temperature Sensor"));
-    Serial.print(F("Sensor Type: "));
-    Serial.println(sensor.name);
-    Serial.print(F("Driver Ver:  "));
-    Serial.println(sensor.version);
-    Serial.print(F("Unique ID:   "));
-    Serial.println(sensor.sensor_id);
-    Serial.print(F("Max Value:   "));
-    Serial.print(sensor.max_value);
-    Serial.println(F("°C"));
-    Serial.print(F("Min Value:   "));
-    Serial.print(sensor.min_value);
-    Serial.println(F("°C"));
-    Serial.print(F("Resolution:  "));
-    Serial.print(sensor.resolution);
-    Serial.println(F("°C"));
-    Serial.println(F("------------------------------------"));
-    // Print humidity sensor details.
+  
     dht.humidity().getSensor(&sensor);
-    Serial.println(F("Humidity Sensor"));
-    Serial.print(F("Sensor Type: "));
-    Serial.println(sensor.name);
-    Serial.print(F("Driver Ver:  "));
-    Serial.println(sensor.version);
-    Serial.print(F("Unique ID:   "));
-    Serial.println(sensor.sensor_id);
-    Serial.print(F("Max Value:   "));
-    Serial.print(sensor.max_value);
-    Serial.println(F("%"));
-    Serial.print(F("Min Value:   "));
-    Serial.print(sensor.min_value);
-    Serial.println(F("%"));
-    Serial.print(F("Resolution:  "));
-    Serial.print(sensor.resolution);
-    Serial.println(F("%"));
-    Serial.println(F("------------------------------------"));
+  
 }
 
 float DhtService::getTemperature()
 {
+    //dht.begin();
     sensors_event_t event;
     dht.temperature().getEvent(&event);
+    
     if (isnan(event.temperature))
     {
              return 1.0;

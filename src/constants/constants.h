@@ -1,7 +1,7 @@
 #pragma once
 #include "Arduino.h"
-#define WIFI_SSID "ssid"
-#define WIFI_PASS "your_awesome_password"
+#define WIFI_SSID "SSID"
+#define WIFI_PASS "your_awsome_password"
 
 //! CLK D5
 //! SDA D7
@@ -17,3 +17,4 @@ extern const unsigned char cloud[] PROGMEM;
 extern const unsigned char windS[] PROGMEM;
 extern const unsigned char clearS[] PROGMEM;
 extern const unsigned char clearS1[] PROGMEM ;
+extern unsigned char temperature_icon[];

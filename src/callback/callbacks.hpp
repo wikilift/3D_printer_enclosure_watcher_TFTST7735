@@ -10,18 +10,8 @@ static float last_hum = 0.f;
 void panicCallback()
 {
 
-    int result = evaluatePanic(DhtService::getInstance().getTemperature());
-    if (result == -1)
-    {
-        panicTask.setInterval(500);
-    }
-    else
-    {
-        if (panicTask.getInterval() != 2500)
-        {
-            panicTask.setInterval(2500);
-        }
-    }
+    evaluatePanic(DhtService::getInstance().getTemperature());
+
 }
 
 void updateTime()
@@ -34,7 +24,7 @@ void updateTime()
 void updateTemp()
 {
     float currentTemp = DhtService::getInstance().getTemperature();
-
+    //Serial.print(currentTemp);
     if (currentTemp != last_temp)
     {
         unsigned int myVar = ST7735_GREEN;
@@ -46,13 +36,13 @@ void updateTemp()
         {
             myVar = ST7735_RED;
         }
-        TFTService::getInstance().writeString(15, 45, String(currentTemp) + "C", myVar, 3);
+        TFTService::getInstance().writeString(10, 45, String(currentTemp) + "C", myVar, 3);
         last_temp = currentTemp;
     }
 }
 void evaluateHumidity()
 {
-    float currentHum = DhtService::getInstance().getTemperature();
+    float currentHum = DhtService::getInstance().getHumidity();
     if (currentHum != last_hum)
     {
         TFTService::getInstance().writeString(25, 82, String(currentHum), 0x07FF, 2);
@@ -60,7 +50,7 @@ void evaluateHumidity()
         last_hum = currentHum;
     }
 }
-Task panicTask(2500, TASK_FOREVER, &panicCallback);
+Task panicTask(1000, TASK_FOREVER, &panicCallback);
 Task timeTask(1000, TASK_FOREVER, &updateTime);
-Task tempTask(1500, TASK_FOREVER, &updateTemp);
-Task humidityTask(1500, TASK_FOREVER, &evaluateHumidity);
+Task tempTask(1000, TASK_FOREVER, &updateTemp);
+Task humidityTask(6500, TASK_FOREVER, &evaluateHumidity);
