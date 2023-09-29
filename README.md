@@ -31,11 +31,11 @@ cd esp8266-dashboard
 # (Refer to platform-specific guidelines)
 
 ## Usage / Uso
-# Power on the ESP8266 and the TFT display should show the dashboard
-# (Make sure to connect the DHT11 sensor and set the threshold temperature)
+- Power on the ESP8266 and the TFT display should show the dashboard
+- (Make sure to connect the DHT11 sensor and set the threshold temperature)
 
 ## Features / Características
-# Multitasking-like behavior using TaskScheduler
+- Multitasking-like behavior using TaskScheduler
 
 - Real-time temperature control with DHT11 sensor
 
