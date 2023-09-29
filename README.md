@@ -37,21 +37,21 @@ cd esp8266-dashboard
 ## Features / Características
 # Multitasking-like behavior using TaskScheduler
 
-# Real-time temperature control with DHT11 sensor
+- Real-time temperature control with DHT11 sensor
 
-# Emergency power-off for printers
+- Emergency power-off for printers
 
-# Real-time clock displayed on the dashboard
+- Real-time clock displayed on the dashboard
 
-# Comportamiento similar al multitasking utilizando TaskScheduler
+- Comportamiento similar al multitasking utilizando TaskScheduler
 
-# Control de temperatura en tiempo real con sensor DHT11
+- Control de temperatura en tiempo real con sensor DHT11
 
-# Apagado de emergencia para impresoras
+- Apagado de emergencia para impresoras
 
-# Reloj en tiempo real mostrado en el dashboard
+- Reloj en tiempo real mostrado en el dashboard
 
 ## Contributing / Contribuir
-# This is a work-in-progress and contributions are welcome. Feel free to fork the repository, star it, and open pull requests or issues for any improvements or fixes you'd like to contribute.
+- This is a work-in-progress and contributions are welcome. Feel free to fork the repository, star it, and open pull requests or issues for any improvements or fixes you'd like to contribute.
 
-# Este es un trabajo en progreso y las contribuciones son bienvenidas. Siéntete libre de hacer un fork al repositorio, darle estrellas y abrir pull requests o issues para cualquier mejora o corrección que te gustaría contribuir.
+- Este es un trabajo en progreso y las contribuciones son bienvenidas. Siéntete libre de hacer un fork al repositorio, darle estrellas y abrir pull requests o issues para cualquier mejora o corrección que te gustaría contribuir.
